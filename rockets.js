@@ -8,7 +8,7 @@ class Rocket {
         this.mutation = 0.15;
         this.fitness = 0;
         this.movementId = 0;
-        this.movementCooldown = movements[0].cd;
+        this.movementCooldown = movements == null ? 0 : movements[0].cd;
         this.pauseSimulation = false;
         this.color = color(random(50, 255), random(50, 255), random(50, 255), 100);
     }
@@ -19,9 +19,9 @@ class Rocket {
     }
 
     generateMovements() {
-        this.movements;
+        this.movements = [];
         for (let j = 0; j < 5; j++) {
-            movements.push({x : random(-0.3, 0.3), y : random(-0.3, 0.3), cd : random(10, 30)});
+            this.movements.push({x : random(-0.3, 0.3), y : random(-0.3, 0.3), cd : random(10, 30)});
         }
     }
 
